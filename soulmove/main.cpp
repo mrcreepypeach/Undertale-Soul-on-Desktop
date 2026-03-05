@@ -51,11 +51,11 @@ int main() {
 
 		// Get inputs
 		
-		if (IsKeyDown(KEY_X)) {
+		if (IsKeyDown(KEY_X) || IsKeyDown(KEY_RIGHT_SHIFT)) {
 			soulSpeed /= 2;
 		}
 
-		if (IsKeyPressed(KEY_Z)){
+		if (IsKeyPressed(KEY_Z) || IsKeyPressed(KEY_ENTER)){
 			PlaySound(click);
 		}
 
@@ -68,17 +68,17 @@ int main() {
 			}
 		}
 
-		if (IsKeyDown(KEY_LEFT)) {
+		if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) {
 			movement.x -= soulSpeed;
 		}
-		if (IsKeyDown(KEY_RIGHT)) {
+		if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) {
 			movement.x += soulSpeed;
 		}
 
-		if (IsKeyDown(KEY_UP)) { 
+		if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) { 
 			movement.y -= soulSpeed;
 		}
-		if (IsKeyDown(KEY_DOWN)) {
+		if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) {
 			movement.y += soulSpeed;
 		}
 		// Normalize diagonol movement
