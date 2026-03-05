@@ -22,6 +22,7 @@ int main() {
 
 	InitWindow(windowSizeX, windowSizeY, "YOU");
 	SetTargetFPS(60);
+	
 	InitAudioDevice();
 
 	// Load image & texture data
@@ -29,6 +30,9 @@ int main() {
 	Texture2D soul = LoadTextureFromImage(soulPNG);
 	soul.height = soulSize;
 	soul.width = soulSize;
+
+	// Setting window icon
+	SetWindowIcon(soulPNG);
 
 	// Load audio
 	Sound click = LoadSound("res/click.wav");
@@ -55,17 +59,26 @@ int main() {
 			PlaySound(click);
 		}
 
+		if (IsKeyPressed(KEY_M)) {
+			if (IsMusicStreamPlaying(amb)) {
+				PauseMusicStream(amb);
+			}
+			else {
+				PlayMusicStream(amb);
+			}
+		}
+
 		if (IsKeyDown(KEY_LEFT)) {
 			movement.x -= soulSpeed;
 		}
-		else if (IsKeyDown(KEY_RIGHT)) {
+		if (IsKeyDown(KEY_RIGHT)) {
 			movement.x += soulSpeed;
 		}
 
 		if (IsKeyDown(KEY_UP)) { 
 			movement.y -= soulSpeed;
 		}
-		else if (IsKeyDown(KEY_DOWN)) {
+		if (IsKeyDown(KEY_DOWN)) {
 			movement.y += soulSpeed;
 		}
 		// Normalize diagonol movement

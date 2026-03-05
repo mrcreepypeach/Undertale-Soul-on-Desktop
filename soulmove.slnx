@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="soulmove/soulmove.vcxproj" />
+  <Project Path="soulmove/soulmove.vcxproj" Id="185ba3ca-aea0-4110-83a7-cbc640b6bec4" />
 </Solution>
