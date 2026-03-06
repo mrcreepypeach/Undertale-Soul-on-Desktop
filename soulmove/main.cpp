@@ -1,19 +1,19 @@
 #ifndef _DEBUG
-
+#ifdef _WIN32 || _WIN64
 #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
-
+#endif
 #endif
 
 #include "raylib.h"
 #include "raymath.h"
 #include <iostream>
 
-int defaultSoulSpeed = 4;
+const int defaultSoulSpeed = 4;
 
 int soulSpeed = 4;
-int soulSize = 30;
-int windowSizeX = 30;
-int windowSizeY = 35;
+const int soulSize = 30;
+const int windowSizeX = 30;
+const int windowSizeY = 35;
 
 int main() {
 	SetConfigFlags(FLAG_WINDOW_TRANSPARENT);
@@ -81,11 +81,10 @@ int main() {
 		if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) {
 			movement.y += soulSpeed;
 		}
-		// Normalize diagonol movement
+		// Normalize diagonal movement
 		if (movement.x != 0 || movement.y != 0){ 
-			movement = Vector2Normalize(movement);
-			movement.x *= soulSpeed;
-			movement.y *= soulSpeed;
+			movement.x = (movement.x / sqrt(movement.x * movement.x + movement.y * movement.y)) * soulSpeed;
+			movement.y = (movement.y / sqrt(movement.x * movement.x + movement.y * movement.y)) * soulSpeed;
 		}
 
 		curPos.x += movement.x;
