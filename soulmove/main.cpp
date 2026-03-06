@@ -49,8 +49,17 @@ int main() {
 		
 		soulSpeed = defaultSoulSpeed;
 
-		// Get inputs
-		
+		// Get mouse inputs
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
+			Vector2 mousePos = GetMousePosition();
+			HideCursor();
+			curPos.x += (mousePos.x - soulSize / 2) * 0.25;
+			curPos.y += (mousePos.y - soulSize / 2) * 0.25;
+		}
+		else { ShowCursor(); }
+
+		// Get keyboard inputs
+
 		if (IsKeyDown(KEY_X) || IsKeyDown(KEY_RIGHT_SHIFT)) {
 			soulSpeed /= 2;
 		}
