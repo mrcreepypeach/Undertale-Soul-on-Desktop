@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>YOU</TargetName>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -127,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\x64\Release\res\AUDIO_DRONE.ogg" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +144,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Downloads\dmc.ico" />
+    <Image Include="..\x64\Release\res\dmc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\x64\Release\res\click.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

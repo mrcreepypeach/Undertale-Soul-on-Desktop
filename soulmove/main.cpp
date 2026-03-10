@@ -11,10 +11,10 @@
 #include "raymath.h"
 #include <iostream>
 
-// Timer class to handle the smooth movement after clicking
-class timer
+// Timer struct to handle the smooth movement after clicking
+
+struct timer
 {
-public:
 	bool started = false;
 	float dt;
 	float time = 0;

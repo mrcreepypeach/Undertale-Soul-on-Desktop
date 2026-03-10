@@ -16,6 +16,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="..\x64\Release\res\AUDIO_DRONE.ogg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,5 +39,13 @@
     <Image Include="..\..\..\..\Downloads\dmc.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\x64\Release\res\dmc.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\x64\Release\res\click.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
 </Project>
